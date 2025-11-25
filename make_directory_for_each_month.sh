@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## This cripts creates 12 folders with the name of each month
+
 # Array of Danish month names
 months=("Januar" "Februar" "Marts" "April" "Maj" "Juni" "Juli" "August" "September" "Oktober" "November" "December")
 

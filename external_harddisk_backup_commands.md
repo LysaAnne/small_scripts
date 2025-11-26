@@ -11,7 +11,8 @@ OBS: Tjek at drev er korrekt
 OBS: Tjek at drev er korrekt
 
 ### Robocopy forklaring
-``` D:\ = kilde
+```
+D:\ = kilde
 E:\ = destination
 /E = Kopierer alle mapper og undermapper. Inklusive tomme mapper
 /Z = Genoptag kopiering hvis forbindelsen afbrydes (Restartable mode)
@@ -21,6 +22,7 @@ E:\ = destination
 /V = Verbose mode – viser ekstra detaljer i output
 /TEE = Viser output i terminalen samtidig med at det skrives i logfilen
 /LOG:copy-log.txt = Gemmer hele loggen i en fil der hedder copy-log.txt
-/MIR = Mirror i stedet for copy ```
+/MIR = Mirror i stedet for copy
+```
 
 ## Mac/Linux

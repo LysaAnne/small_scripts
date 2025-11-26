@@ -11,8 +11,7 @@ OBS: Tjek at drev er korrekt
 
 ### Mirror D overpå E (sletter filer der ikke er de samme) på Windows
 ``` robocopy D:\ E:\ /MIR /Z /MT:8 /R:1 /W:1 /TEE /LOG:mirror-log.txt  ```
-
-OBS: Tjek at drev er korrekt
+⚠️ VIGTIGT ⚠️ Tjek at source og destination er korrekt
 
 ### Robocopy forklaring
 ```

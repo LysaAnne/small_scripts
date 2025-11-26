@@ -10,8 +10,10 @@
 OBS: Tjek at drev er korrekt
 
 ### Mirror D overpå E (sletter filer der ikke er de samme) på Windows
-``` robocopy D:\ E:\ /MIR /Z /MT:8 /R:1 /W:1 /TEE /LOG:mirror-log.txt  ```
 ⚠️ VIGTIGT ⚠️ Tjek at source og destination er korrekt
+
+``` robocopy D:\ E:\ /MIR /Z /MT:8 /R:1 /W:1 /TEE /LOG:mirror-log.txt  ```
+
 
 ### Robocopy forklaring
 ```
@@ -56,7 +58,9 @@ Kun PHOTOGRAPHY:
 ``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/JPG/" "/Volumes/03.1 JPG/JPG (alle)/ | tee ~/rsync-JPG-log.txtSkal sorteres/" ```
 - Sorter derefter filerne
 - Lav derefter mirror mellem 03.1 og 03.2
+
 ⚠️ VIGTIGT ⚠️ Tjek at source og destination er korrekt
+
 ``` rsync -avh --delete --progress --info=stats2 "/Volumes/03.1_JPG/" "/Volumes/03.2 JPG/" | tee ~/rsync-mirror-log.txt``` 
 
 ### Rsync forklaring

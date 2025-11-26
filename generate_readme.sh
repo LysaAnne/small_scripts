@@ -2,7 +2,7 @@
 
 echo "# Small Scripts" > README.md
 echo "" >> README.md
-echo "Automatisk genereret oversigt over scripts i dette repository." >> README.md
+echo "This repo contains small scripts I've created for my daily use. This overview has been automatically created." >> README.md
 echo "" >> README.md
 
 # Find alle scripts og markdown-filer i scripts/
@@ -13,11 +13,6 @@ find scripts/ -maxdepth 1 -type f \( \
     -name "*.cmd" -o \
     -name "*.md" \
 \) | while read -r file; do
-
-    # Skip README.md hvis den ligger i scripts/
-    if [[ "$(basename "$file")" == "README.md" ]]; then
-        continue
-    fi
 
     name=$(grep "^# NAME:" "$file" | sed 's/# NAME: //')
     desc=$(grep "^# DESC:" "$file" | sed 's/# DESC: //')

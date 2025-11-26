@@ -57,6 +57,16 @@ Kun PHOTOGRAPHY:
 ``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/JPG/" "/Volumes/03.1 JPG/JPG (alle)/ | tee ~/rsync-JPG-log.txtSkal sorteres/" ```
 - Sorter derefter filerne
 - Lav derefter mirror mellem 03.1 og 03.2
-
+⚠️ VIGTIGT ⚠️ Tjek at source og destination er korrekt
 ``` rsync -avh --delete --progress --info=stats2 "/Volumes/03.1_JPG/" "/Volumes/03.2 JPG/" | tee ~/rsync-mirror-log.txt``` 
 
+### Rsync forklaring
+```
+-a = archive mode (bevar mappestruktur, kopier alle filer rekursivt mm.)
+-v = Verbose
+-h = Human readable — viser filstørrelser i MB/GB i stedet for bytes.
+–delete = Kun til MIRROR. Alt der findes på destinationen, men ikke på source, bliver slettet.
+–progress = Viser fremgang for hver fil under kopiering.
+–info=stats2 = giver diverse logdata (overførelseshastighed, antal filer kopieret, data overført, tid mm.)
+| tee ~/rsync-mirror-log.txt = output vises på skærm og skrives til log-fil
+```

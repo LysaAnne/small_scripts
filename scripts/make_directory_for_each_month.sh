@@ -1,6 +1,7 @@
 #!/bin/bash
 
-## This cripts creates 12 folders with the name of each month
+# NAME: make_directory_for_each_month.sh
+# DESC: Creates 12 folders with the name of each month of the year in the format "YYYY.MM NameOfMonth"
 
 # Array of Danish month names
 months=("Januar" "Februar" "Marts" "April" "Maj" "Juni" "Juli" "August" "September" "Oktober" "November" "December")

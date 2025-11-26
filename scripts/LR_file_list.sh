@@ -1,4 +1,6 @@
-# Creates a LightRoom file name list
+# NAME: LR_file_list.sh
+# DESC: Creates a list of filenames for LightRoom
+
 # Prints the names of the .jpg files inside the directory of the script
 # filenames will be comma separated
 # Excludes hidden ._ files (Mac)

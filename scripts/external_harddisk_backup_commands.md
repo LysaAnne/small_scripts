@@ -1,5 +1,5 @@
 # NAME: external_harddisk_backup_commands.md
-# DESC: Overview of commands used for backing up my external harddisks
+# DESC: Overview of commands used for backing up my external harddisks.
 
 
 # Harddisk backup

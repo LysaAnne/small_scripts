@@ -30,3 +30,33 @@ E:\ = destination
 ```
 
 ## Mac/Linux
+
+### RAW-filer
+
+Dry run:
+
+``` rsync -avhn --progress "/Volumes/01 RAW/DONE (backup)/RAW/" "/Volumes/02.4_RAW/" ```
+
+Alle i DONE: 
+
+``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/RAW/" "/Volumes/02.4_RAW/" | tee ~/rsync-RAW-log.txt ```
+
+Kun BRYLLUP:
+
+``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/RAW/BRYLLUP/" "/Volumes/02.4_RAW/BRYLLUP/" | tee ~/rsync-BRYLLUP-log.txt ```
+
+Kun PHOTOGRAPHY:
+
+``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/RAW/PHOTOGRAPHY/" "/Volumes/02.4_RAW/PHOTOGRAPHY/" | tee ~/rsync-PHOTOGRAPHY-log.txt ```
+
+### JPG-filer
+- Slet alle RAW
+- Flyt alle mapper fra RAW over i JPG
+- Lav nu rsync til 03.1 (JPG) harddisk
+
+``` rsync -avh --progress "/Volumes/01 RAW/DONE (backup)/JPG/" "/Volumes/03.1 JPG/JPG (alle)/ | tee ~/rsync-JPG-log.txtSkal sorteres/" ```
+- Sorter derefter filerne
+- Lav derefter mirror mellem 03.1 og 03.2
+
+``` rsync -avh --delete --progress --info=stats2 "/Volumes/03.1_JPG/" "/Volumes/03.2 JPG/" | tee ~/rsync-mirror-log.txt``` 
+

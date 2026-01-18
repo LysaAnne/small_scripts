@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# NAME: sort_photos.sh
+# DESC: Scans a directory and sorts photos and videos into folders named "YYYY.MM" based on capture date metadata, falling back to file modification date when metadata is missing
+
 # Sort photos and videos into folders named YYYY.MM based on:
 # 1) Capture date (EXIF/QuickTime metadata) when available
 # 2) File modification date as fallback

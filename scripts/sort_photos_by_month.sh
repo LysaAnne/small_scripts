@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# NAME: sort_photos.sh
+# NAME: sort_photos_by_month.sh
 # DESC: Scans a directory and sorts photos and videos into folders named "YYYY.MM" based on capture date metadata, falling back to file modification date when metadata is missing
 
 # Sort photos and videos into folders named YYYY.MM based on:
@@ -8,9 +8,9 @@
 # 2) File modification date as fallback
 #
 # Usage:
-#   chmod +x sort_photos.sh
-#   ./sort_photos.sh                # sorts current directory
-#   ./sort_photos.sh  /path/to/dir   # sorts given directory
+#   chmod +x sort_photos_by_month.sh
+#   ./sort_photos_by_month.sh                # sorts current directory
+#   ./sort_photos_by_month.sh  /path/to/dir   # sorts given directory
 
 SOURCE_DIR="${1:-.}"
 

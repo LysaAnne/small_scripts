@@ -14,7 +14,7 @@ OBS: Tjek at drev er korrekt
 
 ``` robocopy D:\ E:\ /MIR /Z /MT:8 /R:1 /W:1 /TEE /LOG:mirror-log.txt  ```
 
-
+fdsfd
 ### Robocopy forklaring
 ```
 D:\ = kilde

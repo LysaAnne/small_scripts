@@ -9,10 +9,23 @@
 #
 # Usage:
 #   chmod +x sort_photos_by_month.sh
-#   ./sort_photos_by_month.sh                # sorts current directory
-#   ./sort_photos_by_month.sh  /path/to/dir   # sorts given directory
+#   ./sort_photos_by_month.sh /path/to/dir
 
-SOURCE_DIR="${1:-.}"
+if [[ "$#" -ne 1 ]]; then
+  echo "Error: you must provide exactly one folder path."
+  echo ""
+  echo "Usage:"
+  echo './sort_photos_by_month.sh "/path/to/folder"'
+  exit 1
+fi
+
+SOURCE_DIR="$1"
+
+if [[ ! -d "$SOURCE_DIR" ]]; then
+  echo "Error: folder does not exist:"
+  echo "$SOURCE_DIR"
+  exit 1
+fi
 
 # Require exiftool for best results
 if ! command -v exiftool >/dev/null 2>&1; then

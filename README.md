@@ -17,6 +17,9 @@ Creates 12 folders with the name of each month of the year in the format "YYYY.M
 ## sort_photos_by_month.sh
 Scans a directory and sorts photos and videos into folders named "YYYY.MM" based on capture date metadata, falling back to file modification date when metadata is missing
 
+## add_word_to_media_filenames.sh
+Renames photos and videos in a required folder by adding a prompted word before the file extension, using "-" space or "_" as delimiter.
+
 ## move_identical_media_duplicates.sh
 Recursively scans a directory for identical photo/video files (same content, different names allowed).
 

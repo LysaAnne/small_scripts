@@ -103,6 +103,18 @@ mkdir -p "$LOG_DIR"
 DATE=$(date +"%Y-%m-%d_%H-%M-%S")
 LOG="$LOG_DIR/backup-$DATE.log"
 
+# Common rsync exclude rules
+# Skips unwanted macOS and Windows system files/folders
+EXCLUDES=(
+  --exclude=".DS_Store"
+  --exclude="._*"
+  --exclude=".Trashes"
+  --exclude=".Spotlight-V100"
+  --exclude=".fseventsd"
+  --exclude="\$RECYCLE.BIN"
+  --exclude="System Volume Information"
+)
+
 # Default dry run setting
 RUN_DRYRUN=false
 
@@ -129,13 +141,12 @@ if [ "$mode" = "1" ]; then
     # -v = verbose
     # -h = human readable sizes
     # -n = dry run (no actual changes)
-    # --exclude = skips unwanted Mac metadata files
+    # --exclude = skips unwanted system and metadata files
     # --partial-dir = stores partial files safely
     # --progress = shows live progress
     # --stats = shows transfer statistics
     rsync -avhn \
-      --exclude=".DS_Store" \
-      --exclude="._*" \
+      "${EXCLUDES[@]}" \
       --partial-dir=.rsync-partial \
       --progress \
       --stats \
@@ -155,8 +166,7 @@ if [ "$mode" = "1" ]; then
   # Actual backup
   # caffeinate -i prevents the Mac from going to sleep while rsync is running
   caffeinate -i rsync -avh \
-    --exclude=".DS_Store" \
-    --exclude="._*" \
+    "${EXCLUDES[@]}" \
     --partial-dir=.rsync-partial \
     --progress \
     --stats \
@@ -196,14 +206,13 @@ elif [ "$mode" = "2" ]; then
     # -v = verbose
     # -h = human readable sizes
     # -n = dry run (no actual changes)
-    # --exclude = skips unwanted Mac metadata files
+    # --exclude = skips unwanted system and metadata files
     # --partial-dir = stores partial files safely
     # --delete = removes files on destination that do not exist on source
     # --progress = shows live progress
     # --stats = shows transfer statistics
     rsync -avhn \
-      --exclude=".DS_Store" \
-      --exclude="._*" \
+      "${EXCLUDES[@]}" \
       --partial-dir=.rsync-partial \
       --delete \
       --progress \
@@ -224,8 +233,7 @@ elif [ "$mode" = "2" ]; then
   # Actual mirror backup
   # caffeinate -i prevents the Mac from going to sleep while rsync is running
   caffeinate -i rsync -avh \
-    --exclude=".DS_Store" \
-    --exclude="._*" \
+    "${EXCLUDES[@]}" \
     --partial-dir=.rsync-partial \
     --delete \
     --progress \
